@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佑安综合门诊官网</title>
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        /* 通用样式 */
+        body {
+            font-family: 'Roboto', sans-serif; /* 默认使用Roboto字体 */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fb;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header, section, footer {
+            margin-bottom: 10px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #013a63;
+        }
+        /* 头部样式 */
+        header {
+            background: linear-gradient(to right, #013a63, #2a72d7);
+            color: #fff;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Noto Sans SC', sans-serif; /* 采用 Noto Sans SC 字体 */
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        .logo span {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .contact-info {
+            text-align: right;
+        }
+
+        /* 轮播图样式 */
+        .slider {
+            width: 90vw; /* 设置宽度为视口宽度 */
+            height: 550px;
+            margin-left: calc((90vw - 100%) / -2); /* 确保不留空白并居中 */
+            border-radius: 0; /* 去除边角圆角效果，如果不需要 */
+            overflow: hidden;
+            position: relative;
+            background-color: #000;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .slider .slick-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+        }
+
+        .slider .slick-dots li {
+            margin: 0 5px;
+        }
+
+        .slider .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid #013a63;
+            opacity: 0.7;
+        }
+
+        .slider .slick-dots li.slick-active button {
+            background-color: #2a72d7;
+            opacity: 1;
+        }
+
+        /* 四宫格标题样式 */
+        .grid-title {
+            text-align: center;
+            font-size: 1.8em;
+            color: #013a63;
+            margin: 30px 0 10px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2a72d7; /* 底部添加下划线 */
+        }
+
+
+        /* 宫格式介绍布局 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .grid-item {
+            background-color: #e0f2fe;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        /* 医学资讯样式 */
+        .news-section {
+            padding: 20px;
+            background-color: #fffbf2;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .news-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .news-section li {
+            margin: 10px 0;
+        }
+
+        /* 地图样式 */
+        #map {
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background-color: #e0f2fe;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            background: linear-gradient(to right, #2a72d7, #013a63);
+            color: #fff;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header 区域 -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="./assets/logo.png" alt="佑安综合门诊">
+            <span>佑安综合门诊</span>
+        </div>
+        <div class="contact-info">
+            <p>电话: 020-87755766, 020-87332200</p>
+            <p>地址: 吉林省长春市二道区和顺街46号</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <!-- 轮播图区域 -->
+    <section>
+        <div class="slider">
+            <div><img src="./assets/环境1.jpg" alt="医院环境图1"></div>
+            <div><img src="./assets/环境4.jpg" alt="医院环境图2"></div>
+            <div><img src="./assets/环境5.jpg" alt="医院环境图3"></div>
+        </div>
+    </section>
+
+    <h2 class="grid-title">长春市右安综合门诊：专业医疗，贴心守护</h2>
+
+    <!-- 宫格式介绍布局 -->
+    <section class="grid">
+        <div class="grid-item">
+            <h3>医院概况</h3>
+            <p>在长春市，有一家备受赞誉的医疗门诊——右安综合门诊。它以专业的医疗服务和贴心的人文关怀，成为老百姓健康的守护者。</p>
+        </div>
+        <div class="grid-item">
+            <h3>一楼科室介绍</h3>
+            <p>门诊一楼，设施完备，涵盖内科、儿科等重要科室。拥有先进的检测设备，能进行精准的各项检验，为疾病诊断提供准确依据。</p>
+        </div>
+        <div class="grid-item">
+            <h3>二楼中医国医堂</h3>
+            <p>中医国医堂汇聚经验丰富的中医专家，提供个性化的中医诊疗方案。理疗、针灸、推拿等项目，帮助患者通过中医疗法恢复健康。</p>
+        </div>
+        <div class="grid-item">
+            <h3>服务理念</h3>
+            <p>每一位医护人员秉持“以患者为中心”的理念，用耐心和爱心对待患者，注重心理需求与康复指导，让患者感受家的温暖。</p>
+        </div>
+    </section>
+
+    <!-- 公共医学资讯 -->
+    <section class="news-section">
+        <h3>医学资讯</h3>
+        <ul>
+            <li>如何预防流感？秋冬季节做好保暖，保持个人卫生。</li>
+            <li>骨质疏松防治小知识，补钙的同时不忘运动。</li>
+            <li>日常饮食平衡，避免“三高”疾病的发生。</li>
+            <li>睡眠质量对健康的重要性，成年人的最佳睡眠时间为7-8小时。</li>
+        </ul>
+    </section>
+
+    <!-- 地图区域 -->
+    <section>
+        <h3>医院位置</h3>
+        <div id="map"></div>
+    </section>
+</div>
+
+<!-- 页脚区域 -->
+<footer>
+    <p>&copy; 2024 佑安综合门诊 | 地址：吉林省长春市二道区和顺街46号 | 邮编：510080</p>
+</footer>
+
+<!-- JS: 轮播和地图插件 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://webapi.amap.com/maps?v=1.4.15&key=您的高德地图API_KEY"></script>
+
+<script>
+    // 初始化轮播
+    $(document).ready(function(){
+        $('.slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            appendDots: $('.slider')
+        });
+    });
+
+    // 初始化高德地图
+    var map = new AMap.Map('map', {
+        center: [125.3245, 43.8868], // 长春市二道区经纬度
+        zoom: 15
+    });
+    var marker = new AMap.Marker({
+        position: [125.3245, 43.8868]
+    });
+    map.add(marker);
+</script>
+
+</body>
+</html>
