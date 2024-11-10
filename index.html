@@ -17,7 +17,19 @@
             background-color: #f4f8fb;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden; /* 防止横向滚动 */
         }
+
+        h1, h2, h3 {
+            font-size: 1.5em; /* 默认字体大小 */
+        }
+
+        @media (max-width: 768px) {
+            h1, h2, h3 {
+                font-size: 1.2em; /* 在移动设备上减小字体大小 */
+            }
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -38,6 +50,8 @@
         }
         .header-container {
             display: flex;
+            flex-direction: column; /* 小屏幕上垂直排列 */
+            text-align: center; /* 确保文字居中 */
             align-items: center;
             justify-content: space-between;
             padding: 10px;
@@ -57,7 +71,18 @@
             font-weight: bold;
         }
         .contact-info {
-            text-align: right;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        @media (min-width: 768px) {
+            .header-container {
+                flex-direction: row; /* 大屏幕上恢复水平排列 */
+                justify-content: space-between;
+            }
+            .contact-info {
+                text-align: right;
+            }
         }
 
         /* 轮播图样式 */
@@ -69,6 +94,12 @@
             overflow: hidden;
             position: relative;
             background-color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .slider {
+                height: 200px; /* 移动设备上的高度调整 */
+            }
         }
 
         .slider img {
@@ -261,7 +292,16 @@
             adaptiveHeight: true,
             autoplay: true,
             autoplaySpeed: 3000,
-            appendDots: $('.slider')
+            appendDots: $('.slider'),
+            responsive: [
+                {
+                    breakpoint: 768, // 针对小于768px的屏幕
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     });
 
