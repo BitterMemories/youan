@@ -196,8 +196,44 @@
             color: #fff;
             padding: 15px;
         }
+
+        /* 微信二维码样式 */
+        .wechat-qrcode {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        .wechat-qrcode img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .wechat-qrcode p {
+            font-size: 0.9em;
+            color: #333;
+            margin: 0;
+        }
+
     </style>
 </head>
+
+<!-- 在网页中加入微信公众号二维码 -->
+<div class="wechat-qrcode">
+    <img src="./assets/wechat-qrcode.png" alt="关注微信公众号">
+    <p>扫一扫关注我们</p>
+</div>
+
 <body>
 
 <!-- Header 区域 -->
